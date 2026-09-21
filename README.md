@@ -1,32 +1,21 @@
 # Практические работы по машинному обучению
 
-**Студент:** Эркинбеков Айман
+Эркинбеков Айман
 
-Каждая практическая работа находится в отдельной папке со своим описанием, данными и Jupyter Notebook.
+Здесь будут мои практические работы. У каждой работы своя папка с README, данными и notebook.
 
-## Практические работы
+## Работы
 
-| Работа | Тема | Материалы |
-| --- | --- | --- |
-| № 1, вариант B | Настройка окружения и первичный анализ Tips | [Описание](practical-01/README.md) · [Notebook](practical-01/notebooks/pr1_tips_analysis.ipynb) |
+1. [Практическая № 1. Настройка окружения и анализ Tips](practical-01/README.md) (вариант B)
 
-## Структура
+## Как запустить
 
-```text
-practical-01/
-├── README.md
-├── data/tips.csv
-└── notebooks/pr1_tips_analysis.ipynb
+В корне проекта создать и активировать окружение:
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+python -m pip install pandas numpy matplotlib jupyter scikit-learn ipykernel
 ```
 
-Следующие работы добавляются в папки `practical-02`, `practical-03` и далее. Предыдущие работы остаются в репозитории.
-
-## Запуск
-
-1. Создайте окружение в корне: `python3 -m venv .venv`.
-2. Активируйте его на macOS/Linux: `source .venv/bin/activate`.
-3. Установите библиотеки: `python -m pip install pandas numpy matplotlib jupyter scikit-learn ipykernel`.
-4. Откройте notebook в VS Code и выберите ядро `.venv`.
-5. Выполните Restart → Run All и сохраните файл с результатами.
-
-Окружение `.venv` не загружается в Git. Данные читаются по относительным путям внутри каждой практической.
+Затем открыть notebook в VS Code, выбрать ядро `.venv` и выполнить все ячейки. Команда активации выше подходит для macOS и Linux.
