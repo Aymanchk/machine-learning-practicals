@@ -19,6 +19,7 @@
 
 - [Notebook с анализом](notebooks/pr2_titanic_eda.ipynb)
 - [Исходные данные](data/train.csv)
+- [Презентация по работе (PDF)](presentation/pr2_titanic_eda.pdf)
 
 ## Запуск
 
