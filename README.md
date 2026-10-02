@@ -18,7 +18,7 @@
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
-python -m pip install pandas numpy matplotlib jupyter scikit-learn ipykernel
+python -m pip install pandas numpy matplotlib seaborn jupyter scikit-learn ipykernel
 ```
 
 Затем открыть notebook в VS Code, выбрать ядро `.venv` и выполнить все ячейки. Команда активации выше подходит для macOS и Linux.
