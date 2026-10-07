@@ -16,6 +16,5 @@
 
 - `data/train.csv` - исходные данные;
 - `notebooks/pr5_titanic_classification.ipynb` - код, графики и выводы.
-- [Индивидуальное задание: матрица ошибок для рентген-снимков](xray_confusion_matrix.md) - вариант 13, основной уровень, отдельно от Titanic.
 
 Чтобы запустить работу, открой notebook в VS Code, выбери ядро `.venv`, затем выполни Restart и Run All. Вывод ячеек сохранён в файле.
