@@ -11,6 +11,8 @@
 3. [Практическая № 3. Сборка пайплайна предобработки](practical-03/README.md) (вариант B)
 4. [Практическая работа № 4. Регрессионная модель](practical-04/README.md)
 5. [Практическая работа № 5. Классификатор и анализ метрик](practical-05/README.md) (вариант B)
+6. [Практическая работа № 6. Классификация текстов](practical-06/README.md) (вариант B)
+7. [Практическая работа № 7. Случайный лес](practical-07/README.md) (вариант B)
 
 ## Индивидуальные задания
 
@@ -23,7 +25,7 @@
 ```bash
 python3 -m venv .venv
 source .venv/bin/activate
-python -m pip install pandas numpy matplotlib seaborn jupyter scikit-learn ipykernel
+python -m pip install pandas numpy matplotlib seaborn jupyter scikit-learn ipykernel nltk
 ```
 
 Затем открыть notebook в VS Code, выбрать ядро `.venv` и выполнить все ячейки. Команда активации выше подходит для macOS и Linux.
