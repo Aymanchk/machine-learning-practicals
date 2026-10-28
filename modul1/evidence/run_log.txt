@@ -1,0 +1,19 @@
+== Проверка Python ==
+python3 или python3-venv не найден, ставлю через apt-get
+debconf: delaying package configuration, since apt-utils is not installed
+Python 3.12.3
+== Виртуальное окружение и библиотеки ==
+matplotlib==3.11.2
+nbconvert==7.17.1
+numpy==2.5.3
+pandas==3.0.6
+scikit-learn==1.9.1
+== Выполнение notebook (около минуты) ==
+[NbConvertApp] Converting notebook notebooks/project3_income.ipynb to notebook
+[IPKernelApp] WARNING | Kernel is running over TCP without encryption. All communication (including code and outputs) is sent in plain text and is susceptible to eavesdropping. Use IPC transport or launch with kernel manager-provisioned CurveZMQ keys to enable transport encryption.
+[NbConvertApp] Writing 532989 bytes to notebooks/project3_income.ipynb
+== Сохранение вывода ячеек и графиков ==
+Ошибок в ячейках: 0
+== Готово ==
+Вывод ячеек: evidence/notebook_output.txt
+Графики: images/

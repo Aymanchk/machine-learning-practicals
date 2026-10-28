@@ -1,0 +1,248 @@
+===== Ячейка 1 =====
+===== Ячейка 3 =====
+Размер таблицы: (32561, 15)
+   age         workclass  fnlwgt  education  education.num  \
+0   39         State-gov   77516  Bachelors             13   
+1   50  Self-emp-not-inc   83311  Bachelors             13   
+2   38           Private  215646    HS-grad              9   
+3   53           Private  234721       11th              7   
+4   28           Private  338409  Bachelors             13   
+
+       marital.status         occupation   relationship   race     sex  \
+0       Never-married       Adm-clerical  Not-in-family  White    Male   
+1  Married-civ-spouse    Exec-managerial        Husband  White    Male   
+2            Divorced  Handlers-cleaners  Not-in-family  White    Male   
+3  Married-civ-spouse  Handlers-cleaners        Husband  Black    Male   
+4  Married-civ-spouse     Prof-specialty           Wife  Black  Female   
+
+   capital.gain  capital.loss  hours.per.week native.country income  
+0          2174             0              40  United-States  <=50K  
+1             0             0              13  United-States  <=50K  
+2             0             0              40  United-States  <=50K  
+3             0             0              40  United-States  <=50K  
+4             0             0              40           Cuba  <=50K
+===== Ячейка 4 =====
+<class 'pandas.DataFrame'>
+RangeIndex: 32561 entries, 0 to 32560
+Data columns (total 15 columns):
+ #   Column          Non-Null Count  Dtype
+---  ------          --------------  -----
+ 0   age             32561 non-null  int64
+ 1   workclass       30725 non-null  str  
+ 2   fnlwgt          32561 non-null  int64
+ 3   education       32561 non-null  str  
+ 4   education.num   32561 non-null  int64
+ 5   marital.status  32561 non-null  str  
+ 6   occupation      30718 non-null  str  
+ 7   relationship    32561 non-null  str  
+ 8   race            32561 non-null  str  
+ 9   sex             32561 non-null  str  
+ 10  capital.gain    32561 non-null  int64
+ 11  capital.loss    32561 non-null  int64
+ 12  hours.per.week  32561 non-null  int64
+ 13  native.country  31978 non-null  str  
+ 14  income          32561 non-null  str  
+dtypes: int64(6), str(9)
+memory usage: 3.7 MB
+===== Ячейка 5 =====
+                Пропусков  Доля, %
+workclass            1836     5.64
+occupation           1843     5.66
+native.country        583     1.79
+Доля классов income:
+         Доля
+income       
+<=50K   0.759
+>50K    0.241
+===== Ячейка 7 =====
+Train: (26048, 14)  Test: (6513, 14)
+Доля >50K в train: 0.241, в test: 0.241
+===== Ячейка 9 =====
+{'workclass': 'Private', 'occupation': 'Prof-specialty', 'native.country': 'United-States'}
+Пропусков после заполнения: train = 0 , test = 0
+===== Ячейка 11 =====
+Числовые: ['age', 'fnlwgt', 'education.num', 'capital.gain', 'capital.loss', 'hours.per.week']
+Текстовые: ['workclass', 'education', 'marital.status', 'occupation', 'relationship', 'race', 'sex', 'native.country']
+После кодирования: train (26048, 105) , test (6513, 105)
+===== Ячейка 13 =====
+Accuracy: 0.856
+TN=4606  FP=339  FN=600  TP=968
+Модель нашла 968 из 1568 людей с доходом >50K, это 61.7% (recall)
+[график сохранён в images/a_confusion_matrix.png]
+===== Ячейка 16 =====
+Пропусков workclass: 1473 | из них occupation тоже пуст: 1473
+Occupation пуст при заполненном workclass: 6 -> {'Never-worked': 6}
+Доля >50K: с пропусками 0.105, без пропусков 0.249
+===== Ячейка 18 =====
+                  count      mean       std      min       25%       50%  \
+age             26048.0      38.6      13.6     17.0      28.0      37.0   
+fnlwgt          26048.0  190001.8  105510.3  12285.0  118194.2  178553.5   
+education.num   26048.0      10.1       2.6      1.0       9.0      10.0   
+capital.gain    26048.0    1060.7    7299.1      0.0       0.0       0.0   
+capital.loss    26048.0      88.0     405.0      0.0       0.0       0.0   
+hours.per.week  26048.0      40.5      12.4      1.0      40.0      40.0   
+
+                     75%        max  
+age                 48.0       90.0  
+fnlwgt          237457.8  1484705.0  
+education.num       12.0       16.0  
+capital.gain         0.0    99999.0  
+capital.loss         0.0     4356.0  
+hours.per.week      45.0       99.0
+capital.gain = 99999: 124 чел., доля >50K среди них: 1.0
+hours.per.week = 99: 72
+age = 90: 37
+capital.gain = 0 у 91.7%, capital.loss = 0 у 95.3%
+===== Ячейка 19 =====
+                Выбросов по IQR
+age                         118
+fnlwgt                      779
+education.num               990
+capital.gain               2149
+capital.loss               1223
+hours.per.week             7225
+[график]
+===== Ячейка 21 =====
+Сколько разных education.num у каждого education (макс.): 1
+education      Preschool  1st-4th  5th-6th  7th-8th  9th  10th  11th  12th  \
+education.num          1        2        3        4    5     6     7     8   
+
+education      HS-grad  Some-college  Assoc-voc  Assoc-acdm  Bachelors  \
+education.num        9            10         11          12         13   
+
+education      Masters  Prof-school  Doctorate  
+education.num       14           15         16
+sex             Female   Male
+relationship                 
+Husband              1  10585
+Not-in-family     3134   3535
+Other-relative     354    437
+Own-child         1791   2245
+Unmarried         2103    631
+Wife              1230      2
+Дублей строк в train: 16
+Корреляция fnlwgt с income: -0.012
+===== Ячейка 22 =====
+[график]
+===== Ячейка 24 =====
+Удалено дублей: 16 | train теперь: (26032, 14)
+                           f1  roc_auc
+Все признаки            0.659   0.9060
+Без fnlwgt и education  0.659   0.9058
+===== Ячейка 26 =====
+                         accuracy  precision  recall     f1  roc_auc
+Логистическая регрессия     0.851      0.732   0.600  0.659    0.906
+Случайный лес               0.863      0.781   0.602  0.680    0.917
+===== Ячейка 28 =====
+Лучшая модель по F1 на кросс-валидации: Случайный лес
+Порог с максимальным F1: 0.38
+       Precision  Recall     F1    FP    FN  Ошибок FP+FN
+Порог                                                    
+0.30       0.612   0.819  0.701  3256  1132          4388
+0.35       0.657   0.769  0.708  2524  1447          3971
+0.38       0.687   0.739  0.712  2110  1635          3745
+0.40       0.704   0.718  0.711  1890  1769          3659
+0.45       0.740   0.662  0.699  1457  2118          3575
+0.50       0.781   0.602  0.680  1060  2498          3558
+[график сохранён в images/b_threshold.png]
+===== Ячейка 30 =====
+                           Accuracy  Recall  Precision     F1  ROC-AUC     FP  \
+Блок A (LogReg, 0.5)          0.856   0.617      0.741  0.673    0.908  339.0   
+Случайный лес, порог 0.5      0.870   0.622      0.793  0.697    0.922  255.0   
+Случайный лес, порог 0.38     0.859   0.762      0.686  0.722    0.922  546.0   
+
+                              FN  Ошибок FP+FN  
+Блок A (LogReg, 0.5)       600.0         939.0  
+Случайный лес, порог 0.5   592.0         847.0  
+Случайный лес, порог 0.38  373.0         919.0
+[график сохранён в images/b_final_confusion_matrix.png]
+===== Ячейка 33 =====
+                          f1  roc_auc
+С capital.gain/loss    0.680    0.917
+Без capital.gain/loss  0.623    0.892
+В тесте capital.gain=99999: 35 чел., модель дала >50K: 35
+===== Ячейка 35 =====
+                       Precision (0.5)  Recall (0.5)  F1 (0.5)  Лучший порог  \
+Без коррекции                    0.781         0.602     0.680          0.38   
+class_weight=balanced            0.586         0.854     0.695          0.61   
+Oversampling                     0.606         0.828     0.700          0.61   
+Undersampling                    0.573         0.868     0.691          0.63   
+
+                       F1 (лучший порог)  ROC-AUC  
+Без коррекции                      0.712    0.917  
+class_weight=balanced              0.709    0.916  
+Oversampling                       0.712    0.916  
+Undersampling                      0.707    0.915
+===== Ячейка 37 =====
+           Признак                 Группа  Людей  Доля >50K  FNR (пропуски)  \
+0              sex                 Female   2158      0.114           0.294   
+1              sex                   Male   4355      0.304           0.228   
+2             race     Amer-Indian-Eskimo     73      0.123           0.556   
+3             race     Asian-Pac-Islander    200      0.260           0.250   
+4             race                  Black    662      0.140           0.323   
+5             race                  Other     45      0.089           0.000   
+6             race                  White   5533      0.255           0.230   
+7        age_group                  17-25   1129      0.008           0.778   
+8        age_group                  26-35   1698      0.169           0.348   
+9        age_group                  36-45   1606      0.337           0.223   
+10       age_group                  46-55   1172      0.395           0.177   
+11       age_group                  56-65    657      0.326           0.262   
+12       age_group                    66+    251      0.211           0.132   
+13       edu_group             Ниже школы    841      0.052           0.659   
+14       edu_group                  Школа   2120      0.160           0.460   
+15       edu_group          Колледж/Assoc   1940      0.216           0.288   
+16       edu_group              Бакалавр+   1612      0.475           0.088   
+17  marital.status               Divorced    883      0.117           0.631   
+19  marital.status     Married-civ-spouse   2977      0.450           0.176   
+20  marital.status  Married-spouse-absent     86      0.058           0.400   
+21  marital.status          Never-married   2181      0.041           0.573   
+22  marital.status              Separated    199      0.080           0.625   
+23  marital.status                Widowed    182      0.060           0.545   
+24     hours_group                    <35   1131      0.073           0.293   
+25     hours_group                  35-40   3463      0.200           0.290   
+26     hours_group                  41-49    647      0.369           0.218   
+27     hours_group                    50+   1272      0.435           0.174   
+
+    FPR (ложные)  Ошибок, %  
+0          0.038      6.673  
+1          0.156     17.796  
+2          0.047     10.959  
+3          0.176     19.500  
+4          0.046      8.459  
+5          0.024      2.222  
+6          0.119     14.730  
+7          0.006      1.240  
+8          0.062     11.072  
+9          0.181     19.552  
+10         0.193     18.686  
+11         0.226     23.744  
+12         0.106     11.155  
+13         0.008      4.162  
+14         0.077     13.868  
+15         0.115     15.258  
+16         0.268     18.238  
+17         0.017      8.834  
+19         0.320     25.529  
+20         0.000      2.326  
+21         0.003      2.659  
+22         0.000      5.025  
+23         0.012      4.396  
+24         0.033      5.217  
+25         0.090     13.023  
+26         0.174     19.011  
+27         0.264     22.484
+===== Ячейка 38 =====
+[график сохранён в images/c_errors_by_group.png]
+===== Ячейка 40 =====
+                             f1  roc_auc
+Все признаки              0.680    0.917
+Без защищённых признаков  0.591    0.866
+        Доля получивших предложение (полная)  \
+sex                                            
+Female                                 0.114   
+Male                                   0.344   
+
+        Доля получивших предложение (без защищённых)  Реальная доля >50K  
+sex                                                                       
+Female                                         0.133               0.114  
+Male                                           0.274               0.304
