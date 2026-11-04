@@ -32,6 +32,7 @@
 
 - `data/o_churn_synthetic.csv` - данные;
 - `notebooks/pr8_boosting.ipynb` - код, таблицы и выводы.
+- `presentation/pr8_boosting.pdf` - презентация по работе (3 слайда).
 
 ## Запуск
 
